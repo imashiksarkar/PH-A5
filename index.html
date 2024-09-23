@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <style>
+      *,
+      *::before,
+      *::after {
+        font-family: 'Lexend', sans-serif;
+      }
+
+      .no-arrows::-webkit-outer-spin-button,
+      .no-arrows::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .no-arrows {
+        -moz-appearance: textfield; /* Firefox */
+      }
+    </style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white h-screen w-full">
+    <header class="fixed top-0 left-0 right-0 backdrop-blur-md z-20">
+      <nav class="bg-[#F9F7F3]/95 py-6 relative">
+        <div
+          class="container mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-8 md:flex-row items-center justify-between text-[#111111] text-lg md:text-xl font-semibold"
+        >
+          <a href="/" class="bg-lime-300 px-8 py-3 rounded-lg">Blog</a>
+          <div class="navbar__brand flex items-center gap-4">
+            <figure class="h-12 aspect-square">
+              <img
+                src="./assets/images/logo.png"
+                alt="logo"
+                class="w-full h-full object-cover"
+              />
+            </figure>
+            <h1>Donate Bangladesh</h1>
+          </div>
+          <div class="balance flex items-center gap-4">
+            <figure class="h-7 aspect-square">
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/images/coin.png"
+                alt="coin"
+              />
+            </figure>
+            <h2 class="text-[#575655] font-medium">5500 BDT</h2>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
