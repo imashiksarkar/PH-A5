@@ -31,14 +31,20 @@
     </style>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Script -->
+    <script defer src="./assets/js/main.js"></script>
   </head>
-  <body class="bg-white h-screen w-full">
+  <body class="bg-white h-screen w-full flex flex-col">
     <header class="fixed top-0 left-0 right-0 backdrop-blur-md z-20">
       <nav class="bg-[#F9F7F3]/95 py-6 relative">
         <div
           class="container mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-8 md:flex-row items-center justify-between text-[#111111] text-lg md:text-xl font-semibold"
         >
-          <a href="/" class="bg-lime-300 px-8 py-3 rounded-lg">Blog</a>
+          <a
+            href="/"
+            class="bg-lime-300 px-8 py-3 rounded-lg hover:scale-95 transition-all"
+            >Blog</a
+          >
           <div class="navbar__brand flex items-center gap-4">
             <figure class="h-12 aspect-square">
               <img
@@ -65,15 +71,21 @@
         <div
           class="container mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-center text-[#111111] text-lg md:text-xl font-semibold gap-4"
         >
-          <button class="bg-lime-300 px-8 py-3 rounded-lg">Donation</button>
-          <button class="px-8 py-3 rounded-lg border-2 text-[#585858]">
+          <button
+            class="bg-lime-300 px-8 py-3 rounded-lg hover:scale-95 transition-all"
+          >
+            Donation
+          </button>
+          <button
+            class="px-8 py-3 rounded-lg border-2 text-[#585858] hover:scale-95 transition-all"
+          >
             History
           </button>
         </div>
       </div>
     </header>
-    <main class="z-10">
-      <section class="mt-[370px] md:mt-60">
+    <main class="z-10 grow">
+      <section class="mt-[370px] md:mt-60 hidden">
         <div class="container mx-auto px-4 md:px-6 lg:px-8 py-8 grid gap-8">
           <div
             class="item border-2 p-6 rounded-xl grid grid-rows-[2.2fr_3fr] lg:grid-rows-1 lg:grid-cols-[1.3fr_2fr] gap-8 overflow-hidden"
@@ -118,7 +130,7 @@
                   min="1"
                 />
                 <button
-                  class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent focus:border-slate-300 focus:opacity-90 font-semibold"
+                  class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent font-semibold hover:scale-[0.99] transition-all"
                   type="submit"
                 >
                   Donate Now
@@ -171,7 +183,7 @@
                   min="1"
                 />
                 <button
-                  class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent focus:border-slate-300 focus:opacity-90 font-semibold"
+                  class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent hover:scale-[0.99] transition-all font-semibold"
                   type="submit"
                 >
                   Donate Now
@@ -225,13 +237,27 @@
                   min="1"
                 />
                 <button
-                  class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent focus:border-slate-300 focus:opacity-90 font-semibold"
+                  class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent hover:scale-[0.99] transition-all font-semibold"
                   type="submit"
                 >
                   Donate Now
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+      </section>
+      <!-- History -->
+      <section class="mt-[370px] md:mt-60">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 py-8 grid gap-8">
+          <div class="item border-2 p-6 rounded-xl">
+            <h1 class="text-xl font-bold leading-8">
+              96500 Taka is Donated for famine-2024 at Feni, Bangladesh
+            </h1>
+            <p class="mt-3 text-[#585858] font-light leading-7">
+              Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
+              Time)
+            </p>
           </div>
         </div>
       </section>
