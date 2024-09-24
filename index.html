@@ -36,7 +36,7 @@
   </head>
   <body class="bg-white h-screen w-full flex flex-col">
     <header class="fixed top-0 left-0 right-0 backdrop-blur-md z-20">
-      <nav class="bg-[#F9F7F3]/95 py-6 relative">
+      <nav class="bg-[#F9F7F3]/95 py-6">
         <div
           class="container mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-8 md:flex-row items-center justify-between text-[#111111] text-lg md:text-xl font-semibold"
         >
@@ -63,21 +63,25 @@
                 alt="coin"
               />
             </figure>
-            <h2 class="text-[#575655] font-medium">5500 BDT</h2>
+            <h2 class="text-[#575655] font-medium">
+              <span id="available-balance">5500</span>BDT
+            </h2>
           </div>
         </div>
       </nav>
-      <div class="cta-btns py-8 relative bg-white/70">
+      <div class="cta-btns py-8 bg-white/70">
         <div
           class="container mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-center text-[#111111] text-lg md:text-xl font-semibold gap-4"
         >
           <button
             class="bg-lime-300 px-8 py-3 rounded-lg hover:scale-95 transition-all"
+            name="donation"
           >
             Donation
           </button>
           <button
             class="px-8 py-3 rounded-lg border-2 text-[#585858] hover:scale-95 transition-all"
+            name="history"
           >
             History
           </button>
@@ -85,7 +89,7 @@
       </div>
     </header>
     <main class="z-10 grow">
-      <section class="mt-[370px] md:mt-60 hidden">
+      <section class="mt-[370px] md:mt-60" id="donation-tab">
         <div class="container mx-auto px-4 md:px-6 lg:px-8 py-8 grid gap-8">
           <div
             class="item border-2 p-6 rounded-xl grid grid-rows-[2.2fr_3fr] lg:grid-rows-1 lg:grid-cols-[1.3fr_2fr] gap-8 overflow-hidden"
@@ -109,9 +113,11 @@
                     alt="coin"
                   />
                 </figure>
-                <h2 class="text-[#575655] font-medium">5500 BDT</h2>
+                <h2 class="text-[#575655] font-medium balance">
+                  <span class="collected-amount">5500</span>BDT
+                </h2>
               </span>
-              <h1 class="mt-8 text-xl font-bold leading-8">
+              <h1 class="mt-8 text-xl font-bold leading-8 item__title">
                 Donate for Flood at Noakhali, Bangladesh
               </h1>
               <p class="mt-3 text-[#585858] font-light leading-7">
@@ -128,6 +134,7 @@
                   type="number"
                   placeholder="Write Donation Amount"
                   min="1"
+                  name="donation-amount"
                 />
                 <button
                   class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent font-semibold hover:scale-[0.99] transition-all"
@@ -160,9 +167,11 @@
                     alt="coin"
                   />
                 </figure>
-                <h2 class="text-[#575655] font-medium">5500 BDT</h2>
+                <h2 class="text-[#575655] font-medium balance">
+                  <span class="collected-amount">5500</span>BDT
+                </h2>
               </span>
-              <h1 class="mt-8 text-xl font-bold leading-8">
+              <h1 class="mt-8 text-xl font-bold leading-8 item__title">
                 Donate for Flood Relief in Feni,Bangladesh
               </h1>
               <p class="mt-3 text-[#585858] font-light leading-7">
@@ -181,6 +190,7 @@
                   type="number"
                   placeholder="Write Donation Amount"
                   min="1"
+                  name="donation-amount"
                 />
                 <button
                   class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent hover:scale-[0.99] transition-all font-semibold"
@@ -213,9 +223,11 @@
                     alt="coin"
                   />
                 </figure>
-                <h2 class="text-[#575655] font-medium">5500 BDT</h2>
+                <h2 class="text-[#575655] font-medium">
+                  <span class="collected-amount">5500</span>BDT
+                </h2>
               </span>
-              <h1 class="mt-8 text-xl font-bold leading-8">
+              <h1 class="mt-8 text-xl font-bold leading-8 item__title">
                 Aid for Injured in the Quota Movement
               </h1>
               <p class="mt-3 text-[#585858] font-light leading-7">
@@ -235,6 +247,7 @@
                   type="number"
                   placeholder="Write Donation Amount"
                   min="1"
+                  name="donation-amount"
                 />
                 <button
                   class="bg-lime-300 px-8 py-3 rounded-lg mt-4 border-2 border-transparent hover:scale-[0.99] transition-all font-semibold"
@@ -248,22 +261,38 @@
         </div>
       </section>
       <!-- History -->
-      <section class="mt-[370px] md:mt-60">
-        <div class="container mx-auto px-4 md:px-6 lg:px-8 py-8 grid gap-8">
-          <div class="item border-2 p-6 rounded-xl">
-            <h1 class="text-xl font-bold leading-8">
-              96500 Taka is Donated for famine-2024 at Feni, Bangladesh
-            </h1>
-            <p class="mt-3 text-[#585858] font-light leading-7">
-              Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
-              Time)
-            </p>
-          </div>
-        </div>
+      <section class="mt-[370px] md:mt-60 hidden" id="history-tab">
+        <div
+          class="container mx-auto px-4 md:px-6 lg:px-8 py-8 grid gap-8"
+        ></div>
       </section>
     </main>
     <footer class="py-4 bg-slate-200">
       <p class="text-center">&copy;2024 All Rights Reserved</p>
     </footer>
+
+    <!-- Modal -->
+    <dialog
+      id="modal"
+      class="bg-slate-600/30 w-full h-screen fixed top-0 inset-0 z-30 items-center justify-center"
+    >
+      <div
+        class="bg-white w-max py-20 px-40 flex flex-col items-center rounded-lg"
+      >
+        <h1 class="text-4xl font-bold">Congrats!</h1>
+        <figure class="mt-6">
+          <img src="./assets/images/coin.png" alt="coin" class="w-12" />
+        </figure>
+        <p class="capitalize mt-6">You have donated for humankind</p>
+        <h3 class="capitalize mt-6 font-semibold text-2xl">Successfully</h3>
+
+        <button
+          id="modal-close"
+          class="capitalize mt-12 bg-slate-300 px-8 py-3 rounded-lg hover:scale-95 transition-all"
+        >
+          close confirmation
+        </button>
+      </div>
+    </dialog>
   </body>
 </html>
