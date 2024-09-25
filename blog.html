@@ -31,6 +31,8 @@
     </style>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Script -->
+    <script defer src="./assets/js/blog.js"></script>
   </head>
   <body class="bg-white h-screen w-full flex flex-col">
     <header class="fixed top-0 left-0 right-0 backdrop-blur-md z-20">
@@ -69,7 +71,130 @@
       </nav>
     </header>
     <main class="z-10 grow">
-      <p>main</p>
+      <section class="faq mt-[230px] md:mt-28 py-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+          <h1 class="capitalize text-2xl lg:text-4xl font-bold">
+            Frequently Asked questions.
+          </h1>
+          <div class="accordion mt-12 flex flex-col gap-4 transition-all">
+            <div
+              class="accordion__item bg-slate-200 rounded-lg overflow-hidden active"
+            >
+              <button
+                class="accordion-btn p-4 bg-blue-300 text-left w-full hover:bg-blue-300/80 transition-all"
+              >
+                <h1 class="text-lg lg:text-xl font-semibold">
+                  What is the Document Object Model (DOM)?
+                </h1>
+              </button>
+              <p
+                class="accordion-answer p-4 h-auto text-slate-700 text-md lg:text-lg transition-all"
+              >
+                The DOM (Document Object Model) is an HTML elements structure in
+                a tree format. With Javascript, we can select the HTML elements
+                and update their properties. DOM lets us change attributes,
+                styles, text content, etc. using Javascript on the go.
+              </p>
+            </div>
+            <div
+              class="accordion__item bg-slate-200 rounded-lg overflow-hidden active"
+            >
+              <button
+                class="accordion-btn p-4 bg-blue-300 text-left w-full hover:bg-blue-300/80 transition-all"
+              >
+                <h1 class="text-lg lg:text-xl font-semibold">
+                  How do you select an element from the DOM?
+                </h1>
+              </button>
+              <p
+                class="accordion-answer p-0 h-0 text-slate-700 text-md lg:text-lg transition-all"
+              >
+                There are multiple different APIs to select an element from the
+                dom like,
+                <br />
+                <br />
+                document.getElementById()
+                <br />
+                document.getElementsByClassName()
+                <br />
+                document.getElementsByTagName()
+                <br />
+                document.querySelector(), document.querySelectorAll()
+              </p>
+            </div>
+            <div
+              class="accordion__item bg-slate-200 rounded-lg overflow-hidden active"
+            >
+              <button
+                class="accordion-btn p-4 bg-blue-300 text-left w-full hover:bg-blue-300/80 transition-all"
+              >
+                <h1 class="text-lg lg:text-xl font-semibold">
+                  What is event delegation in the context of the DOM, and why is
+                  it useful?
+                </h1>
+              </button>
+              <p
+                class="accordion-answer p-0 h-0 text-slate-700 text-md lg:text-lg transition-all"
+              >
+                Suppose we need to add event listeners to multiple elements.
+                Despite adding an event listener to an individual item, we can
+                add an event listener to the parent of those elements and detect
+                which specific element was clicked.
+                <br />
+                This way, we don't need to select many elements, so adding just
+                one event listener works fine.
+              </p>
+            </div>
+            <div
+              class="accordion__item bg-slate-200 rounded-lg overflow-hidden active"
+            >
+              <button
+                class="accordion-btn p-4 bg-blue-300 text-left w-full hover:bg-blue-300/80 transition-all"
+              >
+                <h1 class="text-lg lg:text-xl font-semibold">
+                  How do you manipulate an element's attributes and styles using
+                  the DOM?
+                </h1>
+              </button>
+              <p
+                class="accordion-answer p-0 h-0 text-slate-700 text-md lg:text-lg transition-all"
+              >
+                Many browser APIs available for manipulating an element's
+                attributes and styles.
+                <br />
+                <br />
+                ## Here's how to get the value of an attribute.
+                <br />
+                const element = document.getElementById('myElement')
+                <br />
+                const hrefValue = element.getAttribute('href')
+                <br />
+                <br />
+                ## Here's how to set an attribute.
+                <br />
+                const element = document.getElementById('myElement')
+                <br />
+                element.setAttribute('href', 'https://new-link.com')
+                <br />
+                <br />
+                To manipulate styles, we can directly do it by using
+                <br />
+                const element = document.getElementById('myElement')
+                <br />
+                element.style.backgroundColor = 'red'
+                <br />
+                Or we can do it by setting and removing some classes
+                <br />
+                const element = document.getElementById('myElement')
+                <br />
+                element.classList.remove()
+                <br />
+                element.classList.add()
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="py-4 bg-slate-200">
       <p class="text-center">&copy;2024 All Rights Reserved</p>
